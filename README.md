@@ -1,6 +1,6 @@
 # aws assume role
 
-golang tool to assume role, simplify for using by CI/CD pipeline
+A small golang tool to assume role, simplify for using by CI/CD pipeline
 
 Reference: https://github.com/remind101/assume-role/blob/master/main.go
 
