@@ -17,7 +17,11 @@ TAG=${1:-latest}
 docker build --no-cache -t ${IMAGE}:${TAG} .
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+  # Push the image
   docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   docker push ${IMAGE}:${TAG}
-  docker push ${IMAGE}:${TAG}
+
+  # set tag to git repo
+  git tag $(NEXT_VERSION)
+  git push --tags
 fi

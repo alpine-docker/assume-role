@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-  - bash ./build.sh
+  - make release

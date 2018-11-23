@@ -17,11 +17,5 @@ current-version:
 next-version:
 	@echo $(NEXT_VERSION)
 
-docker_push:
+release:
 	bash ./build.sh $(NEXT_VERSION)
-
-git_tag:
-	docker push $(IMAGE):$(NEXT_VERSION)
-	git checkout master;
-	git tag $(NEXT_VERSION)
-	git push --tags
